@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="GuiClient.OrderFormController" prefWidth="600.0" prefHeight="600.0">
+    <children>
+
+        <!-- טבלת הזמנות -->
+        <TableView fx:id="orderTable" layoutX="20" layoutY="20" prefWidth="560.0" prefHeight="200.0">
+            <columns>
+                <TableColumn fx:id="colOrderNumber" text="Order #" prefWidth="80.0"/>
+                <TableColumn fx:id="colParkingSpace" text="Parking Space" prefWidth="100.0"/>
+                <TableColumn fx:id="colOrderDate" text="Order Date" prefWidth="100.0"/>
+                <TableColumn fx:id="colConfirmationCode" text="Confirmation Code" prefWidth="120.0"/>
+                <TableColumn fx:id="colSubscriberId" text="Subscriber ID" prefWidth="100.0"/>
+                <TableColumn fx:id="colPlacingDate" text="Placing Date" prefWidth="100.0"/>
+            </columns>
+        </TableView>
+
+        <Button layoutX="460.0" layoutY="230.0" text="Load Orders" onAction="#handleLoadOrders" />
+
+        <!-- טופס עריכה מצומצם -->
+        <Label layoutX="30.0" layoutY="270.0" text="Order Number:" />
+        <TextField fx:id="txtOrderNumber" layoutX="180.0" layoutY="265.0" editable="false"/>
+
+        <Label layoutX="30.0" layoutY="310.0" text="Parking Space:" />
+        <TextField fx:id="txtParkingSpace" layoutX="180.0" layoutY="305.0"/>
+
+        <Label layoutX="30.0" layoutY="350.0" text="Order Date:" />
+        <DatePicker fx:id="dateOrderDate" layoutX="180.0" layoutY="345.0"/>
+
+        <Button fx:id="btnUpdate" text="Update" layoutX="150.0" layoutY="420.0" onAction="#handleUpdate"/>
+        <Button fx:id="btnClose" text="Close" layoutX="250.0" layoutY="420.0" onAction="#handleClose"/>
+    </children>
+</AnchorPane>
